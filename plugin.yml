@@ -1,0 +1,32 @@
+name: WhatsMyIP
+author: TheNewHEROBRINE
+main: TheNewHEROBRINE\WhatsMyIP\Main
+version: 1.0.0
+api: 2.0.0
+
+commands:
+ getip:
+  usage: "/getip [player]"
+  description: "Show you the ip of a player"
+  aliases: ["ip"]
+  permission: "whatsmyip.command.getip.self;whatsmyip.command.getip.other"
+
+permissions:
+ whatsmyip:
+  description: "Allows using all WhatsMyIP commands and utilities"
+  default: op
+  children:
+   whatsmyip.command:
+    description: "Allows using all WhatsMyIP commands"
+    default: op
+    children:
+     whatsmyip.command.getip:
+      description: "Allows the user to see the ip of a player"
+      default: op
+      children:
+       whatsmyip.command.getip.self:
+        description: "Allows the user to see his ip"
+        default: true
+       whatsmyip.command.getip.other:
+        description: "Allows the user to see the ip of other players"
+        default: op
